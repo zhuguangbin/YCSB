@@ -73,6 +73,7 @@
     <module>cassandra</module>
     <module>core</module>
     <module>hbase</module>
+    <module>hbaserest</module>
     <module>cosmoshbase</module>
     <module>hypertable</module>
     <module>dynamodb</module>

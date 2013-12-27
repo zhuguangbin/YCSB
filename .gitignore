@@ -14,6 +14,9 @@ elasticsearch/.settings/
 hbase/.classpath
 hbase/.project
 hbase/.settings/
+hbaserest/.classpath
+hbaserest/.project
+hbaserest/.settings/
 cosmoshbase/.classpath
 cosmoshbase/.project
 cosmoshbase/.settings/
@@ -47,6 +50,7 @@ cosmoshbase/target/
 distribution/target/
 dynamodb/target/
 hbase/target/
+hbaserest/target/
 hypertable/target/
 infinispan/target/
 jdbc/target/
