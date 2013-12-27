@@ -41,3 +41,17 @@ redis/.settings/
 voldemort/.classpath
 voldemort/.project
 voldemort/.settings/
+cassandra/target/
+core/target/
+cosmoshbase/target/
+distribution/target/
+dynamodb/target/
+hbase/target/
+hypertable/target/
+infinispan/target/
+jdbc/target/
+mapkeeper/target/
+mongodb/target/
+orientdb/target/
+redis/target/
+voldemort/target/

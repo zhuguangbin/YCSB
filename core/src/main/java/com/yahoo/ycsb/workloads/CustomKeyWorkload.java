@@ -24,12 +24,12 @@ public class CustomKeyWorkload extends CoreWorkload {
   @Override
   public void init(Properties p) throws WorkloadException {
     super.init(p);
-    
+
     // build key from file
     String customkeys = p.getProperty(CUSTOMKEYS_FILE_PROPERTY);
     System.err.println("Loading keys from file : " + customkeys);
-    
     initKeysFromFile(customkeys);
+    System.err.println("Loaded " + keys.size() + " keys ");
     // shuffle for random
     Collections.shuffle(keys);
   }
@@ -62,13 +62,12 @@ public class CustomKeyWorkload extends CoreWorkload {
 
   @Override
   public String buildKeyName(long keynum) {
-    
-    if (!orderedinserts)
-    {
-      keynum=Utils.hash(keynum);
+
+    if (!orderedinserts) {
+      keynum = Utils.hash(keynum);
     }
-    int keyindex = (int)keynum % (keys.size());
-    
+
+    int keyindex = (int)Math.abs(Math.abs(keynum)%(keys.size()) - 1);
     return keys.get(keyindex);
   }
 
