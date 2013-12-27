@@ -24,9 +24,12 @@ public class CustomKeyWorkload extends CoreWorkload {
   @Override
   public void init(Properties p) throws WorkloadException {
     super.init(p);
-
+    
     // build key from file
-    initKeysFromFile(p.getProperty(CUSTOMKEYS_FILE_PROPERTY));
+    String customkeys = p.getProperty(CUSTOMKEYS_FILE_PROPERTY);
+    System.err.println("Loading keys from file : " + customkeys);
+    
+    initKeysFromFile(customkeys);
     // shuffle for random
     Collections.shuffle(keys);
   }
@@ -35,7 +38,6 @@ public class CustomKeyWorkload extends CoreWorkload {
     InputStream fis;
     BufferedReader br = null;
     String line;
-
     try {
       fis = new FileInputStream(customkeysFilePath);
       br = new BufferedReader(new InputStreamReader(fis, Charset.forName("UTF-8")));
