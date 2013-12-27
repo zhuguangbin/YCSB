@@ -39,17 +39,19 @@ class StatusThread extends Thread
 	Vector<Thread> _threads;
 	String _label;
 	boolean _standardstatus;
+	long _sleeptime;
 	
 	/**
 	 * The interval for reporting status.
 	 */
-	public static final long sleeptime=10000;
+//	public static final long sleeptime=10000;
 
-	public StatusThread(Vector<Thread> threads, String label, boolean standardstatus)
+	public StatusThread(Vector<Thread> threads, String label, boolean standardstatus, long sleeptime)
 	{
 		_threads=threads;
 		_label=label;
 		_standardstatus=standardstatus;
+		_sleeptime = sleeptime;
 	}
 
 	/**
@@ -117,7 +119,7 @@ class StatusThread extends Thread
 
 			try
 			{
-				sleep(sleeptime);
+				sleep(_sleeptime);
 			}
 			catch (InterruptedException e)
 			{
@@ -733,7 +735,8 @@ public class Client
 			{
 				standardstatus=true;
 			}	
-			statusthread=new StatusThread(threads,label,standardstatus);
+			long sleeptime = Long.parseLong(props.getProperty("sleeptime", "10000"));
+			statusthread=new StatusThread(threads,label,standardstatus,sleeptime);
 			statusthread.start();
 		}
 
