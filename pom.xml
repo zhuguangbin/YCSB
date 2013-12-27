@@ -39,12 +39,22 @@
       <artifactId>slf4j-api</artifactId>
       <version>1.6.4</version>
     </dependency>
+    <dependency>
+      <groupId>org.slf4j</groupId>
+      <artifactId>slf4j-log4j12</artifactId>      
+      <version>1.6.4</version>
+    </dependency>
   </dependencies>
  
   <!-- Properties Management -->
   <properties>
+    <env>product</env>
+    <cosmos-hbase-client.version>0.0.1-SNAPSHOT</cosmos-hbase-client.version>
+    <lion.version>1.0.0</lion.version>
+    <lion-client.version>0.2.3</lion-client.version>
+    <cat-core.version>0.6.2</cat-core.version>
     <maven.assembly.version>2.2.1</maven.assembly.version>
-    <hbase.version>0.92.1</hbase.version>
+    <hbase.version>0.94.13-dp</hbase.version>
     <cassandra.version>0.7.0</cassandra.version>
     <infinispan.version>7.1.0.CR1</infinispan.version>
     <openjpa.jdbc.version>2.1.1</openjpa.jdbc.version>
@@ -63,6 +73,7 @@
     <module>cassandra</module>
     <module>core</module>
     <module>hbase</module>
+    <module>cosmoshbase</module>
     <module>hypertable</module>
     <module>dynamodb</module>
     <module>elasticsearch</module>
