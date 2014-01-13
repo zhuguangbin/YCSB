@@ -49,7 +49,7 @@
   <!-- Properties Management -->
   <properties>
     <env>product</env>
-    <cosmos-hbase-client.version>0.0.1-SNAPSHOT</cosmos-hbase-client.version>
+    <cosmos-hbase-client.version>0.1.1</cosmos-hbase-client.version>
     <lion.version>1.0.0</lion.version>
     <lion-client.version>0.2.3</lion-client.version>
     <cat-core.version>0.6.2</cat-core.version>
